@@ -960,6 +960,8 @@ class PV(object):
         if self._args['count'] is not None:
             return self._args['count']
         else:
+            if not self.connected:
+                return None
             return self._getarg('count')
 
     @property
